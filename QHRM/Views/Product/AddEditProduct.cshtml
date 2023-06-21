@@ -1,0 +1,46 @@
+﻿@model ProductInfo
+@{
+    ViewData["Title"] = "AddEditProduct";
+}
+
+<h1>Add\Edit Product</h1>
+<span style="color:grey">(<span style="color:red">*</span> indicates compulsory field)</span>
+<form asp-action="Create">
+    <div class="container">
+        <input type="hidden" asp-for="Sr_No" />
+        <br />
+        <div class="row mb-3">
+            <div class="col-md-3">Name <span style="color:red">*</span></div>
+            <div class="col-md-9">
+                <input type="text" asp-for="Pro_Name" class="form-control" />
+            </div>
+        </div>
+        <div class="row mb-3">
+            <div class="col-md-3">Description <span style="color:red">*</span></div>
+            <div class="col-md-9">
+                <input type="text" asp-for="Pro_Description" class="form-control" />
+            </div>
+        </div>
+        <div class="row mb-3">
+            <div class="col-md-3">Price <span style="color:red">*</span></div>
+            <div class="col-md-9">
+                <input type="text" asp-for="Pro_Price" class="form-control" />
+            </div>
+        </div>
+        <div class="row mb-3">
+            <div class="col-md-3">Create <span style="color:red">*</span></div>
+            <div class="col-md-9">
+                <input type="text" asp-for="Pro_Created" class="form-control" />
+            </div>
+            <span style="color:grey">(Input Format - "21-06-2023 01:26:45 PM")</span>
+        </div>
+        <br />
+        <div class="row mb-3">
+            <div class="col-md-3"></div>
+            <div class="col-md-9">
+                <input type="submit" value="Save" class="btn btn-success" />
+                <a asp-action="Index" class="btn btn-primary">Back To List</a>
+            </div>
+        </div>
+    </div>
+</form>

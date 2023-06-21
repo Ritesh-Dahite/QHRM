@@ -1,0 +1,34 @@
+﻿@model ProductInfo
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h1>Details</h1>
+<div class="container">
+    <input type="hidden" asp-for="Sr_No" />
+    <div class="row mb-3">
+        <div class="col-md-3">Name</div>
+        <div class="col-md-9">@Model.Pro_Name</div>
+    </div>
+    <div class="row mb-3">
+        <div class="col-md-3">Description</div>
+        <div class="col-md-9">@Model.Pro_Description</div>
+    </div>
+    <div class="row mb-3">
+        <div class="col-md-3">Price</div>
+        <div class="col-md-9">@Model.Pro_Price</div>
+    </div>
+    <div class="row mb-3">
+        <div class="col-md-3">Create</div>
+        <div class="col-md-9">@Model.Pro_Created</div>
+    </div>
+    <form asp-action="Delete">
+        <div class="row mb-3">
+            <div class="col-md-3"><input type="hidden" asp-for="Sr_No" /></div>
+            <div class="col-md-9">
+                <input type="submit" value="Delete" class="btn btn-danger" />
+                <a asp-action="Index" class="btn btn-primary">Back To List</a>
+            </div>
+        </div>
+    </form>
+</div>

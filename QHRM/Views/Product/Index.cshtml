@@ -1,0 +1,42 @@
+﻿@model ProductInfoModel
+@{
+    ViewData["Title"] = "Index";
+}
+<h1>Product</h1>
+
+@if(Model!=null)
+{
+    if(Model.ProductsList.Count>0)
+    {
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>Sr No.</th>
+                    <th>Name</th>
+                    <th>Description</th>
+                    <th>Price</th>
+                    <th>Created</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach(var item in Model.ProductsList)
+                {
+                    <tr>
+                        <td>@item.Sr_No</td>
+                        <td>@item.Pro_Name</td>
+                        <td>@item.Pro_Description</td>
+                        <td>@item.Pro_Price</td>
+                        <td>@item.Pro_Created</td>
+                        <td>
+                            <a asp-action="AddEditProduct" asp-route-id="@item.Sr_No" class="btn btn-danger">Edit</a>
+                            <a asp-action="Details" asp-route-id="@item.Sr_No" class="btn btn-warning">Details</a>
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    }
+}
+
+<a asp-action="AddEditProduct" class="btn btn-secondary">Add Product</a>
